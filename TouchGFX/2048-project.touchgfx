@@ -1,0 +1,1177 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "Screen1",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box_wallpaper",
+            "Width": 240,
+            "Height": 320,
+            "Color": {
+              "Red": 237,
+              "Green": 232,
+              "Blue": 208
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "logo_1",
+            "Y": 32,
+            "Width": 240,
+            "Height": 160,
+            "RelativeFilename": "logo-1-240x160.png"
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "start_button",
+            "X": 30,
+            "Y": 223,
+            "Width": 180,
+            "Height": 60,
+            "ButtonTrigger": {
+              "Type": "TouchButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 10,
+                "TextId": "__SingleUse_6DES",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 180,
+                "Height": 60,
+                "BorderSize": 3,
+                "ColorReleased": {
+                  "Red": 120,
+                  "Green": 117,
+                  "Blue": 105
+                },
+                "ColorPressed": {
+                  "Red": 120,
+                  "Green": 117,
+                  "Blue": 105
+                },
+                "ColorBorderReleased": {
+                  "Red": 79,
+                  "Green": 77,
+                  "Blue": 70
+                },
+                "ColorBorderPressed": {
+                  "Red": 79,
+                  "Green": 77,
+                  "Blue": 70
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "start_button"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen2"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Screen2",
+        "Includes": "",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box_wallpaper",
+            "Width": 240,
+            "Height": 320,
+            "Color": {
+              "Red": 237,
+              "Green": 232,
+              "Blue": 208
+            }
+          },
+          {
+            "Type": "Container",
+            "Name": "container_game_play",
+            "X": 10,
+            "Y": 90,
+            "Width": 220,
+            "Height": 220,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "box_0",
+                "Width": 220,
+                "Height": 220,
+                "LockPosition": true,
+                "Color": {
+                  "Red": 181,
+                  "Green": 131,
+                  "Blue": 116
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_4_4",
+                "X": 166,
+                "Y": 166,
+                "Width": 50,
+                "Height": 50,
+                "LockPosition": true,
+                "Color": {
+                  "Red": 232,
+                  "Green": 145,
+                  "Blue": 102
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_4_4",
+                "X": 171,
+                "Y": 182,
+                "Width": 40,
+                "Height": 19,
+                "TextId": "__SingleUse_CMDF",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_R6M1",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_4_3",
+                "X": 112,
+                "Y": 166,
+                "Width": 50,
+                "Height": 50,
+                "LockPosition": true,
+                "Color": {
+                  "Red": 232,
+                  "Green": 145,
+                  "Blue": 102
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_4_3",
+                "X": 117,
+                "Y": 182,
+                "Width": 40,
+                "Height": 19,
+                "TextId": "__SingleUse_JXLW",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_RAO4",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_4_2",
+                "X": 58,
+                "Y": 166,
+                "Width": 50,
+                "Height": 50,
+                "LockPosition": true,
+                "Color": {
+                  "Red": 232,
+                  "Green": 145,
+                  "Blue": 102
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_4_2",
+                "X": 62,
+                "Y": 182,
+                "Width": 40,
+                "Height": 19,
+                "TextId": "__SingleUse_Z0RY",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_OPDK",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_4_1",
+                "X": 4,
+                "Y": 166,
+                "Width": 50,
+                "Height": 50,
+                "LockPosition": true,
+                "Color": {
+                  "Red": 232,
+                  "Green": 145,
+                  "Blue": 102
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_4_1",
+                "X": 9,
+                "Y": 182,
+                "Width": 40,
+                "Height": 19,
+                "TextId": "__SingleUse_Z1V1",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_ADPM",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_3_4",
+                "X": 166,
+                "Y": 112,
+                "Width": 50,
+                "Height": 50,
+                "LockPosition": true,
+                "Color": {
+                  "Red": 232,
+                  "Green": 145,
+                  "Blue": 102
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_3_4",
+                "X": 170,
+                "Y": 128,
+                "Width": 40,
+                "Height": 19,
+                "TextId": "__SingleUse_CGBY",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_PUCL",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_3_3",
+                "X": 112,
+                "Y": 112,
+                "Width": 50,
+                "Height": 50,
+                "LockPosition": true,
+                "Color": {
+                  "Red": 232,
+                  "Green": 145,
+                  "Blue": 102
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_3_3",
+                "X": 117,
+                "Y": 128,
+                "Width": 40,
+                "Height": 19,
+                "TextId": "__SingleUse_WQ2W",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_Y377",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_3_2",
+                "X": 58,
+                "Y": 112,
+                "Width": 50,
+                "Height": 50,
+                "LockPosition": true,
+                "Color": {
+                  "Red": 232,
+                  "Green": 145,
+                  "Blue": 102
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_3_2",
+                "X": 63,
+                "Y": 128,
+                "Width": 40,
+                "Height": 19,
+                "TextId": "__SingleUse_WOYL",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_O1ZI",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_3_1",
+                "X": 4,
+                "Y": 112,
+                "Width": 50,
+                "Height": 50,
+                "LockPosition": true,
+                "Color": {
+                  "Red": 232,
+                  "Green": 145,
+                  "Blue": 102
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_3_1",
+                "X": 9,
+                "Y": 128,
+                "Width": 40,
+                "Height": 19,
+                "TextId": "__SingleUse_83WF",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_6Z8A",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_2_4",
+                "X": 166,
+                "Y": 58,
+                "Width": 50,
+                "Height": 50,
+                "LockPosition": true,
+                "Color": {
+                  "Red": 232,
+                  "Green": 145,
+                  "Blue": 102
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_2_4",
+                "X": 171,
+                "Y": 74,
+                "Width": 40,
+                "Height": 19,
+                "TextId": "__SingleUse_9KYS",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_LTJ5",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_2_3",
+                "X": 112,
+                "Y": 58,
+                "Width": 50,
+                "Height": 50,
+                "LockPosition": true,
+                "Color": {
+                  "Red": 232,
+                  "Green": 145,
+                  "Blue": 102
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_2_3",
+                "X": 117,
+                "Y": 74,
+                "Width": 40,
+                "Height": 19,
+                "TextId": "__SingleUse_B8UG",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_WAGV",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_2_2",
+                "X": 58,
+                "Y": 58,
+                "Width": 50,
+                "Height": 50,
+                "LockPosition": true,
+                "Color": {
+                  "Red": 232,
+                  "Green": 145,
+                  "Blue": 102
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_2_2",
+                "X": 63,
+                "Y": 74,
+                "Width": 40,
+                "Height": 19,
+                "TextId": "__SingleUse_7963",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_UX8N",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_2_1",
+                "X": 4,
+                "Y": 58,
+                "Width": 50,
+                "Height": 50,
+                "LockPosition": true,
+                "Color": {
+                  "Red": 232,
+                  "Green": 145,
+                  "Blue": 102
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_2_1",
+                "X": 9,
+                "Y": 74,
+                "Width": 40,
+                "Height": 19,
+                "TextId": "__SingleUse_4HSY",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_0QLK",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_1_4",
+                "X": 166,
+                "Y": 4,
+                "Width": 50,
+                "Height": 50,
+                "LockPosition": true,
+                "Color": {
+                  "Red": 232,
+                  "Green": 145,
+                  "Blue": 102
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_1_4",
+                "X": 171,
+                "Y": 20,
+                "Width": 40,
+                "Height": 19,
+                "TextId": "__SingleUse_0HXD",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_UKHQ",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_1_3",
+                "X": 112,
+                "Y": 4,
+                "Width": 50,
+                "Height": 50,
+                "LockPosition": true,
+                "Color": {
+                  "Red": 232,
+                  "Green": 145,
+                  "Blue": 102
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_1_3",
+                "X": 117,
+                "Y": 20,
+                "Width": 40,
+                "Height": 19,
+                "TextId": "__SingleUse_8R0D",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_VB1M",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_1_2",
+                "X": 58,
+                "Y": 4,
+                "Width": 50,
+                "Height": 50,
+                "LockPosition": true,
+                "Color": {
+                  "Red": 232,
+                  "Green": 145,
+                  "Blue": 102
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_1_2",
+                "X": 63,
+                "Y": 20,
+                "Width": 40,
+                "Height": 19,
+                "TextId": "__SingleUse_E1EV",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_79OC",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "Box",
+                "Name": "box_1_1",
+                "X": 4,
+                "Y": 4,
+                "Width": 50,
+                "Height": 50,
+                "LockPosition": true,
+                "Color": {
+                  "Red": 232,
+                  "Green": 145,
+                  "Blue": 102
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_1_1",
+                "X": 9,
+                "Y": 20,
+                "Width": 40,
+                "Height": 19,
+                "TextId": "__SingleUse_TQNK",
+                "TextRotation": "0",
+                "Wildcard1": {
+                  "TextId": "__SingleUse_SWOJ",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "container_popup_2",
+            "Y": 148,
+            "Width": 240,
+            "Height": 104,
+            "Visible": false,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "box_popup_2",
+                "Width": 240,
+                "Height": 104,
+                "Color": {
+                  "Red": 3,
+                  "Green": 84,
+                  "Blue": 45
+                }
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "exit_popup_bttn_2",
+                "X": 90,
+                "Y": 60,
+                "Width": 60,
+                "Height": 25,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 3,
+                    "TextId": "__SingleUse_XWWG",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "ColorPressed": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 60,
+                    "Height": 25,
+                    "LockToFlexButtonSize": true,
+                    "BorderSize": 2,
+                    "ColorReleased": {
+                      "Red": 178,
+                      "Green": 14,
+                      "Blue": 31
+                    },
+                    "ColorPressed": {
+                      "Red": 178,
+                      "Green": 14,
+                      "Blue": 31
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_popup_2",
+                "X": 74,
+                "Y": 15,
+                "Width": 92,
+                "Height": 21,
+                "TextId": "__SingleUse_47PA",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "AutoSize": true
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "container_popup_1",
+            "Y": 148,
+            "Width": 240,
+            "Height": 104,
+            "Visible": false,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "box_popup_1",
+                "Width": 240,
+                "Height": 104,
+                "Color": {
+                  "Red": 3,
+                  "Green": 84,
+                  "Blue": 45
+                }
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "exit_popup_bttn_1",
+                "X": 160,
+                "Y": 60,
+                "Width": 60,
+                "Height": 25,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 3,
+                    "TextId": "__SingleUse_17H1",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "ColorPressed": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 60,
+                    "Height": 25,
+                    "LockToFlexButtonSize": true,
+                    "BorderSize": 2,
+                    "ColorReleased": {
+                      "Red": 178,
+                      "Green": 14,
+                      "Blue": 31
+                    },
+                    "ColorPressed": {
+                      "Red": 178,
+                      "Green": 14,
+                      "Blue": 31
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "FlexButton",
+                "Name": "keepgoing_bttn",
+                "X": 20,
+                "Y": 60,
+                "Width": 110,
+                "Height": 25,
+                "ButtonTrigger": {
+                  "Type": "ClickButtonTrigger"
+                },
+                "ButtonStyles": [
+                  {
+                    "Type": "TextButtonStyle",
+                    "Y": 3,
+                    "TextId": "__SingleUse_QTZ7",
+                    "TextRotation": "0",
+                    "ColorReleased": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "ColorPressed": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  },
+                  {
+                    "Type": "BoxWithBorderButtonStyle",
+                    "Width": 110,
+                    "Height": 25,
+                    "BorderSize": 2,
+                    "ColorReleased": {
+                      "Red": 178,
+                      "Green": 14,
+                      "Blue": 31
+                    },
+                    "ColorPressed": {
+                      "Red": 178,
+                      "Green": 14,
+                      "Blue": 31
+                    },
+                    "ColorBorderReleased": {
+                      "Green": 51,
+                      "Blue": 102
+                    },
+                    "ColorBorderPressed": {
+                      "Red": 51,
+                      "Green": 102,
+                      "Blue": 153
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_popup_1",
+                "X": 12,
+                "Y": 15,
+                "Width": 217,
+                "Height": 21,
+                "TextId": "__SingleUse_KJ1O",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "AutoSize": true
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "exit_bttn",
+            "X": 170,
+            "Y": 60,
+            "Width": 60,
+            "Height": 25,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 3,
+                "TextId": "__SingleUse_3D2G",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 60,
+                "Height": 25,
+                "LockToFlexButtonSize": true,
+                "BorderSize": 2,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "FlexButton",
+            "Name": "new_bttn",
+            "X": 100,
+            "Y": 60,
+            "Width": 60,
+            "Height": 25,
+            "ButtonTrigger": {
+              "Type": "ClickButtonTrigger"
+            },
+            "ButtonStyles": [
+              {
+                "Type": "TextButtonStyle",
+                "Y": 3,
+                "TextId": "__SingleUse_FLYW",
+                "TextRotation": "0",
+                "ColorReleased": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "ColorPressed": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              },
+              {
+                "Type": "BoxWithBorderButtonStyle",
+                "Width": 60,
+                "Height": 25,
+                "BorderSize": 2,
+                "ColorReleased": {
+                  "Green": 102,
+                  "Blue": 153
+                },
+                "ColorPressed": {
+                  "Green": 153,
+                  "Blue": 204
+                },
+                "ColorBorderReleased": {
+                  "Green": 51,
+                  "Blue": 102
+                },
+                "ColorBorderPressed": {
+                  "Red": 51,
+                  "Green": 102,
+                  "Blue": 153
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "container_best",
+            "X": 170,
+            "Y": 5,
+            "Width": 60,
+            "Height": 50,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "box_best",
+                "Width": 60,
+                "Height": 50,
+                "Color": {
+                  "Red": 143,
+                  "Green": 70,
+                  "Blue": 70
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_best",
+                "X": 9,
+                "Y": 25,
+                "Width": 42,
+                "Height": 19,
+                "TextId": "__SingleUse_TOPB",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "__SingleUse_GICP",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_best_1",
+                "Y": 1,
+                "Width": 60,
+                "Height": 20,
+                "TextId": "__SingleUse_YO89",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "container_score",
+            "X": 100,
+            "Y": 5,
+            "Width": 60,
+            "Height": 50,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "box_score",
+                "Width": 60,
+                "Height": 50,
+                "Color": {
+                  "Red": 143,
+                  "Green": 70,
+                  "Blue": 70
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_score",
+                "X": 9,
+                "Y": 25,
+                "Width": 42,
+                "Height": 19,
+                "TextId": "__SingleUse_UKTT",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "Wildcard1": {
+                  "TextId": "__SingleUse_158E",
+                  "UseBuffer": true,
+                  "BufferSize": 10
+                }
+              },
+              {
+                "Type": "TextArea",
+                "Name": "text_score_1",
+                "Y": 1,
+                "Width": 60,
+                "Height": 20,
+                "TextId": "__SingleUse_4CM3",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                }
+              }
+            ]
+          },
+          {
+            "Type": "Image",
+            "Name": "logo_2",
+            "X": 10,
+            "Y": 5,
+            "Width": 80,
+            "Height": 80,
+            "RelativeFilename": "logo-2-80x80-2.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction_Exit",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "exit_bttn"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "Interaction_Exit_Popup_1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "exit_popup_bttn_1"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "Interaction_Exit_Popup_2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "exit_popup_bttn_2"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Screen1"
+            }
+          },
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "new_bttn"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "newGame"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "action1"
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "2048-project",
+    "Resolution": {
+      "Width": 240,
+      "Height": 320
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "Screen1",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 240,
+        "Height": 320
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Portrait",
+    "Family": "STM32F4",
+    "SubFamily": "STM32F429/439",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m4",
+    "ProjectFile": "../STM32F429I_DISCO_REV_D01.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": [
+      "CWRVector",
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.25.0",
+  "CreatedBy": "4.25.0"
+}

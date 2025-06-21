@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.25.0">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_GICP" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_158E" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_R6M1" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_RAO4" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_OPDK" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="__SingleUse_ADPM" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">8192</Translation>
+      </Text>
+      <Text Id="__SingleUse_PUCL" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">4096</Translation>
+      </Text>
+      <Text Id="__SingleUse_Y377" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">2048</Translation>
+      </Text>
+      <Text Id="__SingleUse_O1ZI" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">1024</Translation>
+      </Text>
+      <Text Id="__SingleUse_6Z8A" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">512</Translation>
+      </Text>
+      <Text Id="__SingleUse_LTJ5" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">256</Translation>
+      </Text>
+      <Text Id="__SingleUse_WAGV" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">128</Translation>
+      </Text>
+      <Text Id="__SingleUse_UX8N" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">64</Translation>
+      </Text>
+      <Text Id="__SingleUse_0QLK" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">32</Translation>
+      </Text>
+      <Text Id="__SingleUse_UKHQ" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">16</Translation>
+      </Text>
+      <Text Id="__SingleUse_VB1M" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">8</Translation>
+      </Text>
+      <Text Id="__SingleUse_79OC" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">4</Translation>
+      </Text>
+      <Text Id="__SingleUse_SWOJ" Alignment="Left" TypographyId="Typography_00">
+        <Translation Language="GB">2</Translation>
+      </Text>
+      <Text Id="__SingleUse_TOPB" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_UKTT" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_CMDF" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_JXLW" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_Z0RY" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_Z1V1" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_CGBY" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_WQ2W" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_WOYL" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_83WF" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_9KYS" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_B8UG" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_7963" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_4HSY" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_0HXD" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_8R0D" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_E1EV" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_TQNK" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_47PA" Alignment="Center" TypographyId="Typography_01">
+        <Translation Language="GB">Game over!</Translation>
+      </Text>
+      <Text Id="__SingleUse_XWWG" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">Exit</Translation>
+      </Text>
+      <Text Id="__SingleUse_17H1" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">Exit</Translation>
+      </Text>
+      <Text Id="__SingleUse_QTZ7" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">Keep going</Translation>
+      </Text>
+      <Text Id="__SingleUse_KJ1O" Alignment="Center" TypographyId="Typography_01">
+        <Translation Language="GB">You win! Continue playing!</Translation>
+      </Text>
+      <Text Id="__SingleUse_FLYW" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">New</Translation>
+      </Text>
+      <Text Id="__SingleUse_6DES" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">Play game</Translation>
+      </Text>
+      <Text Id="__SingleUse_4CM3" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">Score</Translation>
+      </Text>
+      <Text Id="__SingleUse_YO89" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">Best</Translation>
+      </Text>
+      <Text Id="__SingleUse_3D2G" Alignment="Center" TypographyId="Typography_00">
+        <Translation Language="GB">Exit</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="segoeuib.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Large" Font="segoeuib.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="segoeuib.ttf" Size="14" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography_00" Font="segoeuib.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography_01" Font="segoeuib.ttf" Size="17" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+  </Typographies>
+</TextDatabase>
