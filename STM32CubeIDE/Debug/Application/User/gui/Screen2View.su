@@ -1,24 +1,25 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
 ../../TouchGFX/generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp:28:18:virtual void Screen2ViewBase::action1()	0	static
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:64:6:virtual void Screen2View::tearDownScreen()	0	static
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:56:6:virtual void Screen2View::tearDownScreen()	0	static
 C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:417:6:virtual void Screen2View::newGame()	0	static
 ../../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp:11:13:Screen2View::~Screen2View()	8	static
 ../../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp:11:13:virtual Screen2View::~Screen2View()	8	static
 C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:19:1:Screen2View::Screen2View()	8	static
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:57:6:void Screen2View::playSound()	8	static
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:69:6:void Screen2View::addNewTile()	32	static
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:126:6:void Screen2View::updateBoard()	272	static
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:252:6:bool Screen2View::slideLeft()	36	static
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:286:6:bool Screen2View::slideRight()	36	static
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:320:6:bool Screen2View::slideUp()	28	static
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:354:6:bool Screen2View::slideDown()	28	static
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:388:6:bool Screen2View::isGameOver()	12	static
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:61:6:void Screen2View::addNewTile()	32	static
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:118:6:void Screen2View::updateBoard()	272	static
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:197:6:bool Screen2View::slideLeft()	36	static
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:231:6:bool Screen2View::slideRight()	36	static
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:265:6:bool Screen2View::slideUp()	28	static
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:299:6:bool Screen2View::slideDown()	28	static
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:333:6:bool Screen2View::isGameOver()	12	static
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:362:6:void Screen2View::playSound(uint32_t, uint32_t)	16	static
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:373:6:void Screen2View::playGameOverSound()	40	static
 C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:428:6:void Screen2View::exitGame()	8	static
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:435:6:void Screen2View::saveBestScoreToFlash()	32	static
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:435:6:void Screen2View::saveBestScoreToFlash()	40	static
 C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:464:6:void Screen2View::loadBestScoreFromFlash()	0	static
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:184:6:void Screen2View::updateScore()	16	static
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:191:6:void Screen2View::updateBestScore()	16	static
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:176:6:void Screen2View::updateScore()	16	static
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:183:6:void Screen2View::updateBestScore()	16	static
 C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:29:6:virtual void Screen2View::setupScreen()	8	static
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:205:6:virtual void Screen2View::tickEvent()	24	static
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:382:6:virtual void Screen2View::tickEvent()	24	static
 C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:422:6:virtual void Screen2View::newGameOver()	8	static

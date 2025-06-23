@@ -19,10 +19,7 @@ public:
 protected:
     int gameBoard[4][4];
     int score;
-
-
-    bool buzzerOn = false;
-    int buzzerCountdown = 0;
+    int bestScore;
 
     void addNewTile();
     void updateBoard();
@@ -33,7 +30,8 @@ protected:
     bool slideUp();
     bool slideDown();
     bool isGameOver();
-    void playSound();
+    void playSound(uint32_t freq, uint32_t durationMs);
+    void playGameOverSound();
 
     void saveBestScoreToFlash();            // Hàm lưu bestScore vào Flash
     void loadBestScoreFromFlash();          // Hàm đọc bestScore từ Flash

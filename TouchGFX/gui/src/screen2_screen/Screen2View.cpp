@@ -14,7 +14,7 @@
 #define FLASH_ADDR 0x080F0000 // sector 11
 
 extern osMessageQueueId_t myQueue01Handle;
-extern int bestScore;
+extern TIM_HandleTypeDef htim3;
 
 Screen2View::Screen2View() : Screen2ViewBase()
 {
@@ -51,14 +51,6 @@ void Screen2View::setupScreen()
     updateBoard();
     updateScore();
     updateBestScore();
-}
-
-
-void Screen2View::playSound()
-{
-    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);  // Bật buzzer
-    buzzerOn = true;
-    buzzerCountdown = 10;  // ~160ms nếu tick 60Hz (tick mỗi 16ms)
 }
 
 void Screen2View::tearDownScreen()
@@ -201,53 +193,6 @@ void Screen2View::updateBestScore()
     text_best.setWildcard(text_bestBuffer);
     text_best.invalidate();
 }
-
-void Screen2View::tickEvent()
-{
-    // Luôn xử lý buzzer nếu đang phát âm thanh (chỉ dành cho âm thanh ngắn khi di chuyển)
-    if (buzzerOn)
-    {
-        buzzerCountdown--;
-        if (buzzerCountdown <= 0)
-        {
-            HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET); // Tắt buzzer
-            buzzerOn = false;
-        }
-    }
-
-    uint8_t res;
-    if (osMessageQueueGetCount(myQueue01Handle) > 0)
-    {
-        osMessageQueueGet(myQueue01Handle, &res, NULL, osWaitForever);
-
-        bool boardChanged = false;
-
-        switch (res)
-        {
-            case 'W': boardChanged = slideUp();  break;
-            case 'S': boardChanged = slideDown(); break;
-            case 'A': boardChanged = slideLeft(); break;
-            case 'D': boardChanged = slideRight(); break;
-        }
-
-        if (boardChanged)
-        {
-            playSound();  // chỉ âm di chuyển
-            addNewTile();
-            updateBoard();
-            updateScore();
-
-            if (isGameOver())
-            {
-                container_game_over.setVisible(true);
-                container_game_over.invalidate();
-                updateBestScore();
-            }
-        }
-    }
-}
-
-
 
 bool Screen2View::slideLeft()
 {
@@ -412,6 +357,61 @@ bool Screen2View::isGameOver()
     }
 
     return true;
+}
+
+void Screen2View::playSound(uint32_t freq, uint32_t durationMs)
+{
+    uint32_t period = 1000000 / freq; // Timer chạy ở 1MHz
+    __HAL_TIM_SET_AUTORELOAD(&htim3, period - 1);
+    __HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_2, period / 2); // 50% duty
+
+    HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
+    HAL_Delay(durationMs);
+    HAL_TIM_PWM_Stop(&htim3, TIM_CHANNEL_2);
+}
+
+void Screen2View::playGameOverSound()
+{
+    const uint32_t node[] = {880, 660, 440, 330, 220}; // A5-E5-A4-E4-A3
+    for (int i = 0; i < sizeof(node)/sizeof(node[0]); i++) {
+        playSound(node[i], 120);
+        HAL_Delay(50);
+    }
+}
+
+void Screen2View::tickEvent()
+{
+    uint8_t res;
+    if (osMessageQueueGetCount(myQueue01Handle) > 0)
+    {
+        osMessageQueueGet(myQueue01Handle, &res, NULL, osWaitForever);
+
+        bool boardChanged = false;
+
+        switch (res)
+        {
+            case 'W': boardChanged = slideUp();  break;
+            case 'S': boardChanged = slideDown(); break;
+            case 'A': boardChanged = slideLeft(); break;
+            case 'D': boardChanged = slideRight(); break;
+        }
+
+        if (boardChanged)
+        {
+        	playSound(300, 30); // chỉ âm di chuyển
+            addNewTile();
+            updateBoard();
+            updateScore();
+        }
+
+        if (isGameOver())
+        {
+            container_game_over.setVisible(true);
+            container_game_over.invalidate();
+            updateBestScore();
+            playGameOverSound();
+        }
+    }
 }
 
 void Screen2View::newGame()
