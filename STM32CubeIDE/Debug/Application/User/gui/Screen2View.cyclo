@@ -1,20 +1,22 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
 ../../TouchGFX/generated/gui_generated/include/gui_generated/screen2_screen/Screen2ViewBase.hpp:27:18:virtual void Screen2ViewBase::action1()	1
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:45:6:virtual void Screen2View::tearDownScreen()	1
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:373:6:virtual void Screen2View::newGame()	1
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:50:6:virtual void Screen2View::tearDownScreen()	1
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:381:6:virtual void Screen2View::newGame()	1
 ../../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp:11:13:Screen2View::~Screen2View()	1
 ../../TouchGFX/gui/include/gui/screen2_screen/Screen2View.hpp:11:13:virtual Screen2View::~Screen2View()	1
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:12:1:Screen2View::Screen2View()	1
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:50:6:void Screen2View::addNewTile()	11
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:107:6:void Screen2View::updateBoard()	14
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:208:6:bool Screen2View::slideLeft()	8
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:242:6:bool Screen2View::slideRight()	8
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:276:6:bool Screen2View::slideUp()	8
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:310:6:bool Screen2View::slideDown()	8
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:344:6:bool Screen2View::isGameOver()	11
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:378:6:void Screen2View::exitGame()	1
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:165:6:void Screen2View::updateScore()	1
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:171:6:void Screen2View::updateBestScore()	2
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:22:6:virtual void Screen2View::setupScreen()	2
-C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:181:6:virtual void Screen2View::handleKeyEvent(uint8_t)	7
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:13:1:Screen2View::Screen2View()	1
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:55:6:void Screen2View::addNewTile()	11
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:112:6:void Screen2View::updateBoard()	14
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:216:6:bool Screen2View::slideLeft()	8
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:250:6:bool Screen2View::slideRight()	8
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:284:6:bool Screen2View::slideUp()	8
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:318:6:bool Screen2View::slideDown()	8
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:352:6:bool Screen2View::isGameOver()	11
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:386:6:void Screen2View::exitGame()	1
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:393:6:void Screen2View::saveBestScoreToFlash()	3
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:422:6:void Screen2View::loadBestScoreFromFlash()	1
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:170:6:void Screen2View::updateScore()	1
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:176:6:void Screen2View::updateBestScore()	2
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:23:6:virtual void Screen2View::setupScreen()	2
+C:/TouchGFXProjects/2048-project/TouchGFX/gui/src/screen2_screen/Screen2View.cpp:189:6:virtual void Screen2View::handleKeyEvent(uint8_t)	7

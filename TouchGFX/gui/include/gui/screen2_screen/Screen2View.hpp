@@ -29,6 +29,11 @@ protected:
     bool slideUp();
     bool slideDown();
     bool isGameOver();
+
+private:
+    void saveBestScoreToFlash();            // Hàm lưu bestScore vào Flash
+    void loadBestScoreFromFlash();          // Hàm đọc bestScore từ Flash
+    static const uint32_t FLASH_ADDR = 0x08080000; // Địa chỉ Flash (Sector 11)
 };
 
 #endif // SCREEN2VIEW_HPP

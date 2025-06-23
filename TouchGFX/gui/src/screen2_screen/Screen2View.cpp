@@ -3,9 +3,10 @@
 #include <touchgfx/Utils.hpp>
 #include <touchgfx/Color.hpp>
 #include <cstdlib>
-#include <ctime> //Sử dụng std::clock()
+#include <ctime> // Sử dụng std::clock()
 #ifndef SIMULATOR
 #include "stm32f4xx_hal.h" // Bao gồm HAL cho phần cứng
+#include "stm32f4xx_hal_flash.h" // Bao gồm HAL Flash
 #include "main.h"          // Bao gồm main.h để truy cập hrng
 #endif
 
@@ -32,7 +33,11 @@ void Screen2View::setupScreen()
     }
 
     score = 0;
-    bestScore = 0;
+#ifndef SIMULATOR
+    loadBestScoreFromFlash(); // Đọc bestScore từ Flash trên phần cứng
+#else
+    bestScore = 0; // Giá trị mặc định trong Simulator
+#endif
 
     addNewTile();
     addNewTile();
@@ -173,6 +178,9 @@ void Screen2View::updateBestScore()
     if (score > bestScore)
     {
         bestScore = score;
+#ifndef SIMULATOR
+        saveBestScoreToFlash(); // Lưu vào Flash trên phần cứng
+#endif
     }
     Unicode::snprintf(text_bestBuffer, TEXT_BEST_SIZE, "%d", bestScore);
     text_best.invalidate();
@@ -379,3 +387,44 @@ void Screen2View::exitGame()
 {
     application().gotoScreen1ScreenNoTransition();
 }
+
+// Hàm lưu bestScore vào Flash (chỉ áp dụng cho phần cứng)
+#ifndef SIMULATOR
+void Screen2View::saveBestScoreToFlash()
+{
+    HAL_FLASH_Unlock(); // Mở khóa Flash
+    FLASH_EraseInitTypeDef eraseInit = {0};
+    uint32_t sectorError = 0;
+
+    eraseInit.TypeErase = FLASH_TYPEERASE_SECTORS;
+    eraseInit.Sector = FLASH_SECTOR_11; // Sector 11 (0x08080000)
+    eraseInit.NbSectors = 1;
+    eraseInit.VoltageRange = FLASH_VOLTAGE_RANGE_3;
+
+    if (HAL_FLASHEx_Erase(&eraseInit, &sectorError) != HAL_OK)
+    {
+        Error_Handler();
+        return;
+    }
+
+    if (HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, FLASH_ADDR, bestScore) != HAL_OK)
+    {
+        Error_Handler();
+        return;
+    }
+
+    HAL_FLASH_Lock(); // Khóa Flash lại
+}
+#endif
+
+// Hàm đọc bestScore từ Flash (chỉ áp dụng cho phần cứng)
+#ifndef SIMULATOR
+void Screen2View::loadBestScoreFromFlash()
+{
+    bestScore = (*(__IO uint32_t*)FLASH_ADDR); // Đọc từ Flash
+    if (bestScore < 0 || bestScore > 2048) // Kiểm tra giá trị hợp lệ
+    {
+        bestScore = 0; // Nếu không hợp lệ, đặt lại
+    }
+}
+#endif
