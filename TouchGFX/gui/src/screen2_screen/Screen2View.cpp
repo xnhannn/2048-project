@@ -36,7 +36,7 @@ void Screen2View::setupScreen()
 #ifndef SIMULATOR
     loadBestScoreFromFlash(); // Đọc bestScore từ Flash trên phần cứng
 #else
-    bestScore = 2000; // Giá trị mặc định trong Simulator (để test)
+    bestScore = 9999; // Giá trị mặc định trong Simulator (để test)
 #endif
 
     addNewTile();
@@ -422,7 +422,7 @@ void Screen2View::saveBestScoreToFlash()
 void Screen2View::loadBestScoreFromFlash()
 {
     bestScore = (*(__IO uint32_t*)FLASH_ADDR); // Đọc từ Flash
-    if (bestScore < 0 || bestScore > 2048) // Kiểm tra giá trị hợp lệ
+    if (bestScore < 0) // Kiểm tra giá trị hợp lệ
     {
         bestScore = 0; // Nếu không hợp lệ, đặt lại
     }
