@@ -242,7 +242,7 @@ Screen2ViewBase::Screen2ViewBase() :
     new_game_bttn.setPosition(20, 60, 110, 25);
     container_game_over.add(new_game_bttn);
 
-    text_game_over.setXY(74, 15);
+    text_game_over.setXY(56, 16);
     text_game_over.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     text_game_over.setLinespacing(0);
     text_game_over.setTypedText(touchgfx::TypedText(T___SINGLEUSE_47PA));

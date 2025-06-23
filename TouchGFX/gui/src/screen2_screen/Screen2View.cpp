@@ -11,8 +11,10 @@
 #include "cmsis_os.h"
 #endif
 
+#define FLASH_ADDR 0x080F0000 // sector 11
+
 extern osMessageQueueId_t myQueue01Handle;
-extern int best_score;
+extern int bestScore;
 
 Screen2View::Screen2View() : Screen2ViewBase()
 {
@@ -49,6 +51,14 @@ void Screen2View::setupScreen()
     updateBoard();
     updateScore();
     updateBestScore();
+}
+
+
+void Screen2View::playSound()
+{
+    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_SET);  // Bật buzzer
+    buzzerOn = true;
+    buzzerCountdown = 10;  // ~160ms nếu tick 60Hz (tick mỗi 16ms)
 }
 
 void Screen2View::tearDownScreen()
@@ -180,48 +190,64 @@ void Screen2View::updateScore()
 
 void Screen2View::updateBestScore()
 {
-    if (score > best_score)
+    if (score > bestScore)
     {
-        best_score = score;
+    	bestScore = score;
 #ifndef SIMULATOR
     saveBestScoreToFlash(); // Lưu vào Flash trên phần cứng
 #endif
     }
-    Unicode::snprintf(text_bestBuffer, TEXT_BEST_SIZE, "%d", best_score);
+    Unicode::snprintf(text_bestBuffer, TEXT_BEST_SIZE, "%d", bestScore);
     text_best.setWildcard(text_bestBuffer);
     text_best.invalidate();
 }
 
 void Screen2View::tickEvent()
 {
+    // Luôn xử lý buzzer nếu đang phát âm thanh (chỉ dành cho âm thanh ngắn khi di chuyển)
+    if (buzzerOn)
+    {
+        buzzerCountdown--;
+        if (buzzerCountdown <= 0)
+        {
+            HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, GPIO_PIN_RESET); // Tắt buzzer
+            buzzerOn = false;
+        }
+    }
+
     uint8_t res;
     if (osMessageQueueGetCount(myQueue01Handle) > 0)
     {
         osMessageQueueGet(myQueue01Handle, &res, NULL, osWaitForever);
 
+        bool boardChanged = false;
+
         switch (res)
         {
-			case 'W': slideUp();    break;
-			case 'S': slideDown();   break;
-			case 'A': slideLeft();  break;
-			case 'D': slideRight(); break;
+            case 'W': boardChanged = slideUp();  break;
+            case 'S': boardChanged = slideDown(); break;
+            case 'A': boardChanged = slideLeft(); break;
+            case 'D': boardChanged = slideRight(); break;
         }
 
-        addNewTile();
-        updateBoard();
-        updateScore();
+        if (boardChanged)
+        {
+            playSound();  // chỉ âm di chuyển
+            addNewTile();
+            updateBoard();
+            updateScore();
 
-        // Kiểm tra thua
-        if (isGameOver()) {
-        	//container_popup_2.bringToFront();
-        	container_game_over.setVisible(true);
-        	container_game_over.invalidate();
-            updateBestScore();
-
-            //playGameOverSound();
+            if (isGameOver())
+            {
+                container_game_over.setVisible(true);
+                container_game_over.invalidate();
+                updateBestScore();
+            }
         }
     }
 }
+
+
 
 bool Screen2View::slideLeft()
 {
@@ -409,11 +435,11 @@ void Screen2View::exitGame()
 void Screen2View::saveBestScoreToFlash()
 {
     HAL_FLASH_Unlock(); // Mở khóa Flash
-    FLASH_EraseInitTypeDef eraseInit = {0};
-    uint32_t sectorError = 0;
+    FLASH_EraseInitTypeDef eraseInit;
+    uint32_t sectorError;
 
     eraseInit.TypeErase = FLASH_TYPEERASE_SECTORS;
-    eraseInit.Sector = FLASH_SECTOR_11; // Sector 11 (0x08080000)
+    eraseInit.Sector = FLASH_SECTOR_11; // Sector 11 (0x080F0000)
     eraseInit.NbSectors = 1;
     eraseInit.VoltageRange = FLASH_VOLTAGE_RANGE_3;
 
@@ -437,10 +463,17 @@ void Screen2View::saveBestScoreToFlash()
 #ifndef SIMULATOR
 void Screen2View::loadBestScoreFromFlash()
 {
-    bestScore = (*(__IO uint32_t*)FLASH_ADDR); // Đọc từ Flash
-    if (bestScore < 0) // Kiểm tra giá trị hợp lệ
-    {
-        bestScore = 0; // Nếu không hợp lệ, đặt lại
-    }
+	uint32_t value = (*(__IO uint32_t*)FLASH_ADDR);
+
+	    if (value != 0xFFFFFFFF)
+	    {
+	    	bestScore = value;
+	    }
+	    else
+	    {
+	    	bestScore = 0;
+	    }
 }
 #endif
+
+

@@ -11,7 +11,6 @@ public:
     virtual ~Screen2View() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-    //virtual void handleKeyEvent(uint8_t key);
     virtual void tickEvent();
     void newGame();
     void newGameOver();
@@ -20,7 +19,10 @@ public:
 protected:
     int gameBoard[4][4];
     int score;
-    int bestScore;
+
+
+    bool buzzerOn = false;
+    int buzzerCountdown = 0;
 
     void addNewTile();
     void updateBoard();
@@ -31,11 +33,11 @@ protected:
     bool slideUp();
     bool slideDown();
     bool isGameOver();
+    void playSound();
 
-private:
     void saveBestScoreToFlash();            // Hàm lưu bestScore vào Flash
     void loadBestScoreFromFlash();          // Hàm đọc bestScore từ Flash
-    static const uint32_t FLASH_ADDR = 0x08080000; // Địa chỉ Flash (Sector 11)
+
 };
 
 #endif // SCREEN2VIEW_HPP

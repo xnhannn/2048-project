@@ -21,14 +21,14 @@ Screen1ViewBase::Screen1ViewBase() :
     logo_1.setBitmap(touchgfx::Bitmap(BITMAP_LOGO_1_240X160_ID));
     add(logo_1);
 
-    start_button.setBoxWithBorderPosition(0, 0, 180, 60);
+    start_button.setBoxWithBorderPosition(0, 0, 200, 60);
     start_button.setBorderSize(3);
     start_button.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(120, 117, 105), touchgfx::Color::getColorFromRGB(120, 117, 105), touchgfx::Color::getColorFromRGB(79, 77, 70), touchgfx::Color::getColorFromRGB(79, 77, 70));
     start_button.setText(TypedText(T___SINGLEUSE_6DES));
-    start_button.setTextPosition(0, 10, 180, 60);
+    start_button.setTextPosition(0, 10, 200, 60);
     start_button.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255));
     start_button.setAction(flexButtonCallback);
-    start_button.setPosition(30, 223, 180, 60);
+    start_button.setPosition(20, 223, 200, 60);
     add(start_button);
 }
 
