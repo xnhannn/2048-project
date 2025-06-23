@@ -13,10 +13,10 @@
 Screen2View::Screen2View() : Screen2ViewBase()
 {
 #ifdef SIMULATOR
-    // Trong môi trường giả lập, sử dụng std::clock() để sinh số ngẫu nhiên
+    // Trong môi trường giả lập, sử dụng std::clock() để sinh số ngẫu nhiên (để test)
     std::srand(static_cast<unsigned>(std::clock()));
 #else
-    // Trên phần cứng, không cần gieo hạt vì RNG phần cứng không cần
+
 #endif
 }
 
@@ -36,7 +36,7 @@ void Screen2View::setupScreen()
 #ifndef SIMULATOR
     loadBestScoreFromFlash(); // Đọc bestScore từ Flash trên phần cứng
 #else
-    bestScore = 0; // Giá trị mặc định trong Simulator
+    bestScore = 2000; // Giá trị mặc định trong Simulator (để test)
 #endif
 
     addNewTile();
@@ -75,7 +75,7 @@ void Screen2View::addNewTile()
     uint32_t randomValue;
     if (HAL_RNG_GenerateRandomNumber(&hrng, &randomValue) != HAL_OK)
     {
-        randomValue = 0; // Xử lý lỗi (có thể gọi Error_Handler())
+        randomValue = 0; // Xử lý lỗi
     }
     int newTilePos = randomValue % emptyCount;
 #endif
@@ -388,7 +388,7 @@ void Screen2View::exitGame()
     application().gotoScreen1ScreenNoTransition();
 }
 
-// Hàm lưu bestScore vào Flash (chỉ áp dụng cho phần cứng)
+// Hàm lưu bestScore vào Flash
 #ifndef SIMULATOR
 void Screen2View::saveBestScoreToFlash()
 {
@@ -417,7 +417,7 @@ void Screen2View::saveBestScoreToFlash()
 }
 #endif
 
-// Hàm đọc bestScore từ Flash (chỉ áp dụng cho phần cứng)
+// Hàm đọc bestScore từ Flash
 #ifndef SIMULATOR
 void Screen2View::loadBestScoreFromFlash()
 {

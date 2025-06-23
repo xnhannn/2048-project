@@ -11966,7 +11966,7 @@ Screen2View::Screen2View() : Screen2ViewBase()
  8004aee:	4669      	mov	r1, sp
  8004af0:	f002 fd8e 	bl	8007610 <HAL_RNG_GenerateRandomNumber>
  8004af4:	b108      	cbz	r0, 8004afa <_ZN11Screen2View10addNewTileEv+0x36>
-        randomValue = 0; // Xử lý lỗi (có thể gọi Error_Handler())
+        randomValue = 0; // Xử lý lỗi
  8004af6:	2300      	movs	r3, #0
  8004af8:	9300      	str	r3, [sp, #0]
     int newTilePos = randomValue % emptyCount;
@@ -12713,7 +12713,7 @@ Screen2View::Screen2View() : Screen2ViewBase()
 0800503c <_ZN11Screen2View20saveBestScoreToFlashEv>:
 }
 
-// Hàm lưu bestScore vào Flash (chỉ áp dụng cho phần cứng)
+// Hàm lưu bestScore vào Flash
 #ifndef SIMULATOR
 void Screen2View::saveBestScoreToFlash()
 {
@@ -12773,7 +12773,7 @@ void Screen2View::saveBestScoreToFlash()
 
 0800508c <_ZN11Screen2View22loadBestScoreFromFlashEv>:
 
-// Hàm đọc bestScore từ Flash (chỉ áp dụng cho phần cứng)
+// Hàm đọc bestScore từ Flash
 #ifndef SIMULATOR
 void Screen2View::loadBestScoreFromFlash()
 {
