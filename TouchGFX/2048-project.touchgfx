@@ -597,7 +597,7 @@
           },
           {
             "Type": "Container",
-            "Name": "container_popup_2",
+            "Name": "container_game_over",
             "Y": 148,
             "Width": 240,
             "Height": 104,
@@ -605,7 +605,7 @@
             "Components": [
               {
                 "Type": "Box",
-                "Name": "box_popup_2",
+                "Name": "box_game_over",
                 "Width": 240,
                 "Height": 104,
                 "Color": {
@@ -616,99 +616,7 @@
               },
               {
                 "Type": "FlexButton",
-                "Name": "exit_popup_bttn_2",
-                "X": 90,
-                "Y": 60,
-                "Width": 60,
-                "Height": 25,
-                "ButtonTrigger": {
-                  "Type": "ClickButtonTrigger"
-                },
-                "ButtonStyles": [
-                  {
-                    "Type": "TextButtonStyle",
-                    "Y": 3,
-                    "TextId": "__SingleUse_XWWG",
-                    "TextRotation": "0",
-                    "ColorReleased": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    },
-                    "ColorPressed": {
-                      "Red": 255,
-                      "Green": 255,
-                      "Blue": 255
-                    }
-                  },
-                  {
-                    "Type": "BoxWithBorderButtonStyle",
-                    "Width": 60,
-                    "Height": 25,
-                    "LockToFlexButtonSize": true,
-                    "BorderSize": 2,
-                    "ColorReleased": {
-                      "Red": 178,
-                      "Green": 14,
-                      "Blue": 31
-                    },
-                    "ColorPressed": {
-                      "Red": 178,
-                      "Green": 14,
-                      "Blue": 31
-                    },
-                    "ColorBorderReleased": {
-                      "Green": 51,
-                      "Blue": 102
-                    },
-                    "ColorBorderPressed": {
-                      "Red": 51,
-                      "Green": 102,
-                      "Blue": 153
-                    }
-                  }
-                ]
-              },
-              {
-                "Type": "TextArea",
-                "Name": "text_popup_2",
-                "X": 74,
-                "Y": 15,
-                "Width": 92,
-                "Height": 21,
-                "TextId": "__SingleUse_47PA",
-                "TextRotation": "0",
-                "Color": {
-                  "Red": 255,
-                  "Green": 255,
-                  "Blue": 255
-                },
-                "AutoSize": true
-              }
-            ]
-          },
-          {
-            "Type": "Container",
-            "Name": "container_popup_1",
-            "Y": 148,
-            "Width": 240,
-            "Height": 104,
-            "Visible": false,
-            "Components": [
-              {
-                "Type": "Box",
-                "Name": "box_popup_1",
-                "Width": 240,
-                "Height": 104,
-                "Color": {
-                  "Red": 3,
-                  "Green": 84,
-                  "Blue": 45
-                }
-              },
-              {
-                "Type": "FlexButton",
-                "Name": "exit_popup_bttn_1",
+                "Name": "game_over_exit_bttn",
                 "X": 160,
                 "Y": 60,
                 "Width": 60,
@@ -763,7 +671,7 @@
               },
               {
                 "Type": "FlexButton",
-                "Name": "keepgoing_bttn",
+                "Name": "new_game_bttn",
                 "X": 20,
                 "Y": 60,
                 "Width": 110,
@@ -817,12 +725,12 @@
               },
               {
                 "Type": "TextArea",
-                "Name": "text_popup_1",
-                "X": 12,
+                "Name": "text_game_over",
+                "X": 74,
                 "Y": 15,
-                "Width": 217,
-                "Height": 21,
-                "TextId": "__SingleUse_KJ1O",
+                "Width": 92,
+                "Height": 17,
+                "TextId": "__SingleUse_47PA",
                 "TextRotation": "0",
                 "Color": {
                   "Red": 255,
@@ -1072,10 +980,10 @@
             }
           },
           {
-            "InteractionName": "Interaction_Exit_Popup_1",
+            "InteractionName": "Interaction_Exit_Game_Over",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "exit_popup_bttn_1"
+              "TriggerComponent": "game_over_exit_bttn"
             },
             "Action": {
               "Type": "ActionGotoScreen",
@@ -1084,19 +992,29 @@
             }
           },
           {
-            "InteractionName": "Interaction_Exit_Popup_2",
+            "InteractionName": "Interaction_New_Game_Over",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "exit_popup_bttn_2"
+              "TriggerComponent": "new_game_bttn"
             },
             "Action": {
-              "Type": "ActionGotoScreen",
-              "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Screen1"
+              "Type": "ActionCustom",
+              "FunctionName": "newGameOver"
             }
           },
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 1
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "tickEvent"
+            }
+          },
+          {
+            "InteractionName": "Interaction_New_Game",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "new_bttn"

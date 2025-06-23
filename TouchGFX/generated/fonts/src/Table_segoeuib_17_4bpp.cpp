@@ -7,24 +7,13 @@ KEEP extern const touchgfx::GlyphNode glyphs_segoeuib_17_4bpp[] FONT_TABLE_LOCAT
     {     0, 0x0020,   0,   0,   0,   0,   5,   0,   0, 0x00 },
     {     0, 0x0021,   4,  12,  12,   1,   6,   0,   0, 0x00 },
     {    24, 0x003F,   8,  12,  12,   0,   7,   0,   0, 0x00 },
-    {    72, 0x0043,  10,  12,  12,   0,  11,   0,   0, 0x00 },
-    {   132, 0x0047,  12,  12,  12,   0,  12,   0,   0, 0x00 },
-    {   204, 0x0059,  11,  12,  12,   0,  10,   0,   0, 0x00 },
-    {   276, 0x0061,   9,   9,   9,   0,   9,   0,   1, 0x00 },
-    {   321, 0x0065,   9,   9,   9,   0,   9,   1,   1, 0x00 },
-    {   366, 0x0067,  10,  13,   9,   0,  11,   2,   1, 0x00 },
-    {   431, 0x0069,   3,  13,  13,   1,   5,   0,   0, 0x00 },
-    {   457, 0x006C,   3,  13,  13,   1,   5,   0,   0, 0x00 },
-    {   483, 0x006D,  14,   9,   9,   1,  16,   3,   1, 0x00 },
-    {   546, 0x006E,   9,   9,   9,   1,  10,   4,   1, 0x00 },
-    {   591, 0x006F,  10,   9,   9,   0,  10,   5,   1, 0x00 },
-    {   636, 0x0070,   9,  13,   9,   1,  11,   6,   1, 0x00 },
-    {   701, 0x0072,   6,   9,   9,   1,   7,   7,   1, 0x00 },
-    {   728, 0x0074,   7,  12,  12,   0,   7,   0,   0, 0x00 },
-    {   776, 0x0075,   9,   9,   9,   1,  10,   8,   1, 0x00 },
-    {   821, 0x0076,  10,   9,   9,   0,   9,   0,   0, 0x00 },
-    {   866, 0x0077,  14,   9,   9,   0,  14,   0,   0, 0x00 },
-    {   929, 0x0079,  10,  13,   9,   0,   9,   0,   0, 0x00 }
+    {    72, 0x0047,  12,  12,  12,   0,  12,   0,   0, 0x00 },
+    {   144, 0x0061,   9,   9,   9,   0,   9,   0,   0, 0x00 },
+    {   189, 0x0065,   9,   9,   9,   0,   9,   0,   0, 0x00 },
+    {   234, 0x006D,  14,   9,   9,   1,  16,   0,   0, 0x00 },
+    {   297, 0x006F,  10,   9,   9,   0,  10,   0,   0, 0x00 },
+    {   342, 0x0072,   6,   9,   9,   1,   7,   0,   0, 0x00 },
+    {   369, 0x0076,  10,   9,   9,   0,   9,   0,   0, 0x00 }
 };
 
 // segoeuib_17_4bpp
@@ -43,6 +32,6 @@ touchgfx::GeneratedFont& getFont_segoeuib_17_4bpp();
 
 touchgfx::GeneratedFont& getFont_segoeuib_17_4bpp()
 {
-    static touchgfx::GeneratedFont segoeuib_17_4bpp(glyphs_segoeuib_17_4bpp, 21, 21, 17, 0, 0, 4, 1, 0, 1, unicodes_segoeuib_17_4bpp, kerning_segoeuib_17_4bpp, 63, 0, 0, &segoeuib_contextualFormsTable);
+    static touchgfx::GeneratedFont segoeuib_17_4bpp(glyphs_segoeuib_17_4bpp, 10, 17, 17, 0, 0, 4, 1, 0, 1, unicodes_segoeuib_17_4bpp, kerning_segoeuib_17_4bpp, 63, 0, 0, &segoeuib_contextualFormsTable);
     return segoeuib_17_4bpp;
 }

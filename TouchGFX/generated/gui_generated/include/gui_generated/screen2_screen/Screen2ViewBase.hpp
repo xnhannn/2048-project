@@ -20,6 +20,7 @@ public:
     Screen2ViewBase();
     virtual ~Screen2ViewBase();
     virtual void setupScreen();
+    virtual void handleTickEvent();
 
     /*
      * Custom Actions
@@ -33,6 +34,14 @@ public:
     /*
      * Virtual Action Handlers
      */
+    virtual void newGameOver()
+    {
+        // Override and implement this function in Screen2
+    }
+    virtual void tickEvent()
+    {
+        // Override and implement this function in Screen2
+    }
     virtual void newGame()
     {
         // Override and implement this function in Screen2
@@ -82,15 +91,11 @@ protected:
     touchgfx::TextAreaWithOneWildcard text_1_2;
     touchgfx::Box box_1_1;
     touchgfx::TextAreaWithOneWildcard text_1_1;
-    touchgfx::Container container_popup_2;
-    touchgfx::Box box_popup_2;
-    touchgfx::TextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  exit_popup_bttn_2;
-    touchgfx::TextArea text_popup_2;
-    touchgfx::Container container_popup_1;
-    touchgfx::Box box_popup_1;
-    touchgfx::TextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  exit_popup_bttn_1;
-    touchgfx::TextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  keepgoing_bttn;
-    touchgfx::TextArea text_popup_1;
+    touchgfx::Container container_game_over;
+    touchgfx::Box box_game_over;
+    touchgfx::TextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  game_over_exit_bttn;
+    touchgfx::TextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  new_game_bttn;
+    touchgfx::TextArea text_game_over;
     touchgfx::TextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  exit_bttn;
     touchgfx::TextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  new_bttn;
     touchgfx::Container container_best;

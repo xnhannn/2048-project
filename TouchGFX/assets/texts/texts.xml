@@ -117,17 +117,11 @@
       <Text Id="__SingleUse_47PA" Alignment="Center" TypographyId="Typography_01">
         <Translation Language="GB">Game over!</Translation>
       </Text>
-      <Text Id="__SingleUse_XWWG" Alignment="Center" TypographyId="Typography_00">
-        <Translation Language="GB">Exit</Translation>
-      </Text>
       <Text Id="__SingleUse_17H1" Alignment="Center" TypographyId="Typography_00">
         <Translation Language="GB">Exit</Translation>
       </Text>
       <Text Id="__SingleUse_QTZ7" Alignment="Center" TypographyId="Typography_00">
-        <Translation Language="GB">Keep going</Translation>
-      </Text>
-      <Text Id="__SingleUse_KJ1O" Alignment="Center" TypographyId="Typography_01">
-        <Translation Language="GB">You win! Continue playing!</Translation>
+        <Translation Language="GB">New Game</Translation>
       </Text>
       <Text Id="__SingleUse_FLYW" Alignment="Center" TypographyId="Typography_00">
         <Translation Language="GB">New</Translation>

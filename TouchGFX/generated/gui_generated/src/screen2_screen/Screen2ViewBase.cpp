@@ -216,62 +216,39 @@ Screen2ViewBase::Screen2ViewBase() :
 
     add(container_game_play);
 
-    container_popup_2.setPosition(0, 148, 240, 104);
-    container_popup_2.setVisible(false);
-    box_popup_2.setPosition(0, 0, 240, 104);
-    box_popup_2.setColor(touchgfx::Color::getColorFromRGB(3, 84, 45));
-    container_popup_2.add(box_popup_2);
+    container_game_over.setPosition(0, 148, 240, 104);
+    container_game_over.setVisible(false);
+    box_game_over.setPosition(0, 0, 240, 104);
+    box_game_over.setColor(touchgfx::Color::getColorFromRGB(3, 84, 45));
+    container_game_over.add(box_game_over);
 
-    exit_popup_bttn_2.setBoxWithBorderPosition(0, 0, 60, 25);
-    exit_popup_bttn_2.setBorderSize(2);
-    exit_popup_bttn_2.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(178, 14, 31), touchgfx::Color::getColorFromRGB(178, 14, 31), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
-    exit_popup_bttn_2.setText(TypedText(T___SINGLEUSE_XWWG));
-    exit_popup_bttn_2.setTextPosition(0, 3, 60, 25);
-    exit_popup_bttn_2.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255));
-    exit_popup_bttn_2.setAction(flexButtonCallback);
-    exit_popup_bttn_2.setPosition(90, 60, 60, 25);
-    container_popup_2.add(exit_popup_bttn_2);
+    game_over_exit_bttn.setBoxWithBorderPosition(0, 0, 60, 25);
+    game_over_exit_bttn.setBorderSize(2);
+    game_over_exit_bttn.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(178, 14, 31), touchgfx::Color::getColorFromRGB(178, 14, 31), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    game_over_exit_bttn.setText(TypedText(T___SINGLEUSE_17H1));
+    game_over_exit_bttn.setTextPosition(0, 3, 60, 25);
+    game_over_exit_bttn.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255));
+    game_over_exit_bttn.setAction(flexButtonCallback);
+    game_over_exit_bttn.setPosition(160, 60, 60, 25);
+    container_game_over.add(game_over_exit_bttn);
 
-    text_popup_2.setXY(74, 15);
-    text_popup_2.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    text_popup_2.setLinespacing(0);
-    text_popup_2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_47PA));
-    container_popup_2.add(text_popup_2);
+    new_game_bttn.setBoxWithBorderPosition(0, 0, 110, 25);
+    new_game_bttn.setBorderSize(2);
+    new_game_bttn.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(178, 14, 31), touchgfx::Color::getColorFromRGB(178, 14, 31), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    new_game_bttn.setText(TypedText(T___SINGLEUSE_QTZ7));
+    new_game_bttn.setTextPosition(0, 3, 110, 25);
+    new_game_bttn.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255));
+    new_game_bttn.setAction(flexButtonCallback);
+    new_game_bttn.setPosition(20, 60, 110, 25);
+    container_game_over.add(new_game_bttn);
 
-    add(container_popup_2);
+    text_game_over.setXY(74, 15);
+    text_game_over.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    text_game_over.setLinespacing(0);
+    text_game_over.setTypedText(touchgfx::TypedText(T___SINGLEUSE_47PA));
+    container_game_over.add(text_game_over);
 
-    container_popup_1.setPosition(0, 148, 240, 104);
-    container_popup_1.setVisible(false);
-    box_popup_1.setPosition(0, 0, 240, 104);
-    box_popup_1.setColor(touchgfx::Color::getColorFromRGB(3, 84, 45));
-    container_popup_1.add(box_popup_1);
-
-    exit_popup_bttn_1.setBoxWithBorderPosition(0, 0, 60, 25);
-    exit_popup_bttn_1.setBorderSize(2);
-    exit_popup_bttn_1.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(178, 14, 31), touchgfx::Color::getColorFromRGB(178, 14, 31), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
-    exit_popup_bttn_1.setText(TypedText(T___SINGLEUSE_17H1));
-    exit_popup_bttn_1.setTextPosition(0, 3, 60, 25);
-    exit_popup_bttn_1.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255));
-    exit_popup_bttn_1.setAction(flexButtonCallback);
-    exit_popup_bttn_1.setPosition(160, 60, 60, 25);
-    container_popup_1.add(exit_popup_bttn_1);
-
-    keepgoing_bttn.setBoxWithBorderPosition(0, 0, 110, 25);
-    keepgoing_bttn.setBorderSize(2);
-    keepgoing_bttn.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(178, 14, 31), touchgfx::Color::getColorFromRGB(178, 14, 31), touchgfx::Color::getColorFromRGB(0, 51, 102), touchgfx::Color::getColorFromRGB(51, 102, 153));
-    keepgoing_bttn.setText(TypedText(T___SINGLEUSE_QTZ7));
-    keepgoing_bttn.setTextPosition(0, 3, 110, 25);
-    keepgoing_bttn.setTextColors(touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(255, 255, 255));
-    keepgoing_bttn.setPosition(20, 60, 110, 25);
-    container_popup_1.add(keepgoing_bttn);
-
-    text_popup_1.setXY(12, 15);
-    text_popup_1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    text_popup_1.setLinespacing(0);
-    text_popup_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_KJ1O));
-    container_popup_1.add(text_popup_1);
-
-    add(container_popup_1);
+    add(container_game_over);
 
     exit_bttn.setBoxWithBorderPosition(0, 0, 60, 25);
     exit_bttn.setBorderSize(2);
@@ -359,25 +336,33 @@ void Screen2ViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonCo
         //Go to Screen1 with no screen transition
         application().gotoScreen1ScreenNoTransition();
     }
-    if (&src == &exit_popup_bttn_1)
+    if (&src == &game_over_exit_bttn)
     {
-        //Interaction_Exit_Popup_1
-        //When exit_popup_bttn_1 clicked change screen to Screen1
+        //Interaction_Exit_Game_Over
+        //When game_over_exit_bttn clicked change screen to Screen1
         //Go to Screen1 with no screen transition
         application().gotoScreen1ScreenNoTransition();
     }
-    if (&src == &exit_popup_bttn_2)
+    if (&src == &new_game_bttn)
     {
-        //Interaction_Exit_Popup_2
-        //When exit_popup_bttn_2 clicked change screen to Screen1
-        //Go to Screen1 with no screen transition
-        application().gotoScreen1ScreenNoTransition();
+        //Interaction_New_Game_Over
+        //When new_game_bttn clicked call virtual function
+        //Call newGameOver
+        newGameOver();
     }
     if (&src == &new_bttn)
     {
-        //Interaction1
+        //Interaction_New_Game
         //When new_bttn clicked call virtual function
         //Call newGame
         newGame();
     }
+}
+
+void Screen2ViewBase::handleTickEvent()
+{
+    //Interaction2
+    //When every N tick call virtual function
+    //Call tickEvent
+    tickEvent();
 }

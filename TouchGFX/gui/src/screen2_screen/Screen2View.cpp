@@ -3,16 +3,21 @@
 #include <touchgfx/Utils.hpp>
 #include <touchgfx/Color.hpp>
 #include <cstdlib>
-#include <ctime> //Sử dụng std::clock()
+#include <ctime> // Sử dụng std::clock()
 #ifndef SIMULATOR
 #include "stm32f4xx_hal.h" // Bao gồm HAL cho phần cứng
+#include "stm32f4xx_hal_flash.h" // Bao gồm HAL Flash
 #include "main.h"          // Bao gồm main.h để truy cập hrng
+#include "cmsis_os.h"
 #endif
+
+extern osMessageQueueId_t myQueue01Handle;
+extern int best_score;
 
 Screen2View::Screen2View() : Screen2ViewBase()
 {
 #ifdef SIMULATOR
-    // Trong môi trường giả lập, sử dụng std::clock() để sinh số ngẫu nhiên
+    // Trong môi trường giả lập, sử dụng std::clock() để sinh số ngẫu nhiên (để test)
     std::srand(static_cast<unsigned>(std::clock()));
 #else
     // Trên phần cứng, không cần gieo hạt vì RNG phần cứng không cần
@@ -32,7 +37,11 @@ void Screen2View::setupScreen()
     }
 
     score = 0;
-    bestScore = 0;
+#ifndef SIMULATOR
+    loadBestScoreFromFlash(); // Đọc bestScore từ Flash trên phần cứng
+#else
+    bestScore = 9999; // Giá trị mặc định trong Simulator (để test)
+#endif
 
     addNewTile();
     addNewTile();
@@ -70,7 +79,7 @@ void Screen2View::addNewTile()
     uint32_t randomValue;
     if (HAL_RNG_GenerateRandomNumber(&hrng, &randomValue) != HAL_OK)
     {
-        randomValue = 0; // Xử lý lỗi (có thể gọi Error_Handler())
+        randomValue = 0; // Xử lý lỗi
     }
     int newTilePos = randomValue % emptyCount;
 #endif
@@ -164,44 +173,53 @@ void Screen2View::updateBoard()
 
 void Screen2View::updateScore()
 {
-    Unicode::snprintf(text_scoreBuffer, TEXT_SCORE_SIZE, "%d", score);
-    text_score.invalidate();
+	Unicode::snprintf(text_scoreBuffer, TEXT_SCORE_SIZE, "%d", score);
+	text_score.setWildcard(text_scoreBuffer);
+	text_score.invalidate();
 }
 
 void Screen2View::updateBestScore()
 {
-    if (score > bestScore)
+    if (score > best_score)
     {
-        bestScore = score;
+        best_score = score;
+#ifndef SIMULATOR
+    saveBestScoreToFlash(); // Lưu vào Flash trên phần cứng
+#endif
     }
-    Unicode::snprintf(text_bestBuffer, TEXT_BEST_SIZE, "%d", bestScore);
+    Unicode::snprintf(text_bestBuffer, TEXT_BEST_SIZE, "%d", best_score);
+    text_best.setWildcard(text_bestBuffer);
     text_best.invalidate();
 }
 
-void Screen2View::handleKeyEvent(uint8_t key)
+void Screen2View::tickEvent()
 {
-    bool boardChanged = false;
-
-    switch (key)
+    uint8_t res;
+    if (osMessageQueueGetCount(myQueue01Handle) > 0)
     {
-        case 'W': boardChanged = slideUp(); break;
-        case 'S': boardChanged = slideDown(); break;
-        case 'A': slideLeft(); break;
-        case 'D': slideRight(); break;
-        default: return;
-    }
+        osMessageQueueGet(myQueue01Handle, &res, NULL, osWaitForever);
 
-    if (boardChanged)
-    {
+        switch (res)
+        {
+			case 'W': slideUp();    break;
+			case 'S': slideDown();   break;
+			case 'A': slideLeft();  break;
+			case 'D': slideRight(); break;
+        }
+
         addNewTile();
         updateBoard();
         updateScore();
-        updateBestScore();
-    }
 
-    if (isGameOver())
-    {
-        // Xử lý khi kết thúc trò chơi
+        // Kiểm tra thua
+        if (isGameOver()) {
+        	//container_popup_2.bringToFront();
+        	container_game_over.setVisible(true);
+        	container_game_over.invalidate();
+            updateBestScore();
+
+            //playGameOverSound();
+        }
     }
 }
 
@@ -375,7 +393,54 @@ void Screen2View::newGame()
     setupScreen();
 }
 
+void Screen2View::newGameOver()
+{
+	container_game_over.setVisible(false);
+	container_game_over.invalidate();
+    setupScreen();
+}
 void Screen2View::exitGame()
 {
     application().gotoScreen1ScreenNoTransition();
 }
+
+// Hàm lưu bestScore vào Flash
+#ifndef SIMULATOR
+void Screen2View::saveBestScoreToFlash()
+{
+    HAL_FLASH_Unlock(); // Mở khóa Flash
+    FLASH_EraseInitTypeDef eraseInit = {0};
+    uint32_t sectorError = 0;
+
+    eraseInit.TypeErase = FLASH_TYPEERASE_SECTORS;
+    eraseInit.Sector = FLASH_SECTOR_11; // Sector 11 (0x08080000)
+    eraseInit.NbSectors = 1;
+    eraseInit.VoltageRange = FLASH_VOLTAGE_RANGE_3;
+
+    if (HAL_FLASHEx_Erase(&eraseInit, &sectorError) != HAL_OK)
+    {
+        Error_Handler();
+        return;
+    }
+
+    if (HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, FLASH_ADDR, bestScore) != HAL_OK)
+    {
+        Error_Handler();
+        return;
+    }
+
+    HAL_FLASH_Lock(); // Khóa Flash lại
+}
+#endif
+
+// Hàm đọc bestScore từ Flash
+#ifndef SIMULATOR
+void Screen2View::loadBestScoreFromFlash()
+{
+    bestScore = (*(__IO uint32_t*)FLASH_ADDR); // Đọc từ Flash
+    if (bestScore < 0) // Kiểm tra giá trị hợp lệ
+    {
+        bestScore = 0; // Nếu không hợp lệ, đặt lại
+    }
+}
+#endif

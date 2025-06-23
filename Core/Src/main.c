@@ -25,6 +25,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Components/ili9341/ili9341.h"
+#include "stdbool.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -77,6 +78,8 @@ RNG_HandleTypeDef hrng;
 
 SPI_HandleTypeDef hspi5;
 
+TIM_HandleTypeDef htim3;
+
 SDRAM_HandleTypeDef hsdram1;
 
 /* Definitions for defaultTask */
@@ -95,6 +98,13 @@ const osThreadAttr_t GUI_Task_attributes = {
 };
 /* USER CODE BEGIN PV */
 uint8_t isRevD = 0; /* Applicable only for STM32F429I DISCOVERY REVD and above */
+
+int best_score;
+
+osMessageQueueId_t myQueue01Handle;
+const osMessageQueueAttr_t myQueue01_attributes = {
+		.name = ".myQueue01"
+};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -109,6 +119,7 @@ static void MX_DMA2D_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_ADC2_Init(void);
 static void MX_RNG_Init(void);
+static void MX_TIM3_Init(void);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
 
@@ -189,6 +200,7 @@ int main(void)
   MX_ADC1_Init();
   MX_ADC2_Init();
   MX_RNG_Init();
+  MX_TIM3_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
@@ -213,6 +225,7 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
+  myQueue01Handle = osMessageQueueNew(16, sizeof(uint16_t), &myQueue01_attributes);
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
@@ -337,7 +350,7 @@ static void MX_ADC1_Init(void)
 
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
   */
-  sConfig.Channel = ADC_CHANNEL_0;
+  sConfig.Channel = ADC_CHANNEL_13;
   sConfig.Rank = 1;
   sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
@@ -389,7 +402,7 @@ static void MX_ADC2_Init(void)
 
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
   */
-  sConfig.Channel = ADC_CHANNEL_1;
+  sConfig.Channel = ADC_CHANNEL_5;
   sConfig.Rank = 1;
   sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc2, &sConfig) != HAL_OK)
@@ -653,6 +666,55 @@ static void MX_SPI5_Init(void)
     isRevD = 1;
   }
   /* USER CODE END SPI5_Init 2 */
+
+}
+
+/**
+  * @brief TIM3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_TIM3_Init(void)
+{
+
+  /* USER CODE BEGIN TIM3_Init 0 */
+
+  /* USER CODE END TIM3_Init 0 */
+
+  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  TIM_OC_InitTypeDef sConfigOC = {0};
+
+  /* USER CODE BEGIN TIM3_Init 1 */
+
+  /* USER CODE END TIM3_Init 1 */
+  htim3.Instance = TIM3;
+  htim3.Init.Prescaler = 89;
+  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim3.Init.Period = 2273;
+  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_PWM_Init(&htim3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
+  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
+  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  sConfigOC.OCMode = TIM_OCMODE_PWM1;
+  sConfigOC.Pulse = 0;
+  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN TIM3_Init 2 */
+
+  /* USER CODE END TIM3_Init 2 */
+  HAL_TIM_MspPostInit(&htim3);
 
 }
 
@@ -1096,6 +1158,25 @@ void LCD_Delay(uint32_t Delay)
   HAL_Delay(Delay);
 }
 
+char getDirection(uint16_t x, uint16_t y)
+{
+    // Vùng trung tâm nằm trong khoảng 1700–2300 với 3V
+    bool cX = (x > 1700 && x < 2300);
+    bool cY = (y > 1700 && y < 2300);
+
+    // X là di chuyển theo chiều dọc
+    if (!cX) {
+            if (x < 1000) return 'W'; // di chuyển lên
+            if (x > 3000) return 'S'; //di chuyển xuống
+    }
+    // Y là di chuyển theo chiều ngang
+    if (!cY) {
+        if (y < 1000) return 'D'; // di chuyển sang phải
+        if (y > 3000) return 'A'; // di chuyển sang trái
+    }
+
+    return 0;
+}
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_StartDefaultTask */
@@ -1104,14 +1185,40 @@ void LCD_Delay(uint32_t Delay)
   * @param  argument: Not used
   * @retval None
   */
+
+
+
 /* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void *argument)
 {
   /* USER CODE BEGIN 5 */
+	char last_move = 0;
   /* Infinite loop */
   for(;;)
   {
-    osDelay(100);
+	  // Đọc ADC
+	  	        HAL_ADC_Start(&hadc1);
+	  	        HAL_ADC_Start(&hadc2);
+	  	        HAL_ADC_PollForConversion(&hadc1, 10);
+	  	        HAL_ADC_PollForConversion(&hadc2, 10);
+	  	        uint16_t URX = HAL_ADC_GetValue(&hadc1);
+	  	        uint16_t URY = HAL_ADC_GetValue(&hadc2);
+
+	  	        char move = getDirection(URX, URY);
+
+	  	        if (move != 0 && move != last_move)
+	  	        {
+	  	            last_move = move;
+	  	            osMessageQueuePut(myQueue01Handle, &move, 0, 0);
+	  	        }
+
+	  	        // Nếu Joystick đã về giữa, reset lại vị trí center
+	  	        if (move == 0)
+	  	        {
+	  	            last_move = 0;
+	  	        }
+
+	  	        osDelay(100); // tránh gửi liên tục
   }
   /* USER CODE END 5 */
 }
