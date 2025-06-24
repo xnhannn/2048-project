@@ -9,33 +9,33 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
   2 .rodata       00002770  080254e4  080254e4  000264e4  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 FontFlashSection 00000fa2  08027c54  08027c54  00028c54  2**2
+  3 FontFlashSection 00000fde  08027c54  08027c54  00028c54  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  4 FontSearchFlashSection 00000020  08028bf8  08028bf8  00029bf8  2**2
+  4 FontSearchFlashSection 00000020  08028c34  08028c34  00029c34  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 TextFlashSection 000001cc  08028c18  08028c18  00029c18  2**2
+  5 TextFlashSection 000001d0  08028c54  08028c54  00029c54  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  6 ExtFlashSection 0001a4a0  08028de4  08028de4  00029de4  2**2
+  6 ExtFlashSection 0001a4a0  08028e24  08028e24  00029e24  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .ARM.extab    00000000  08043284  08043284  00045380  2**0
+  7 .ARM.extab    00000000  080432c4  080432c4  00045380  2**0
                   CONTENTS
-  8 .ARM          00000008  08043284  08043284  00044284  2**2
+  8 .ARM          00000008  080432c4  080432c4  000442c4  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  9 .preinit_array 00000000  0804328c  0804328c  00045380  2**0
+  9 .preinit_array 00000000  080432cc  080432cc  00045380  2**0
                   CONTENTS, ALLOC, LOAD, DATA
- 10 .init_array   00000014  0804328c  0804328c  0004428c  2**2
+ 10 .init_array   00000014  080432cc  080432cc  000442cc  2**2
                   CONTENTS, ALLOC, LOAD, DATA
- 11 .fini_array   00000008  080432a0  080432a0  000442a0  2**2
+ 11 .fini_array   00000008  080432e0  080432e0  000442e0  2**2
                   CONTENTS, ALLOC, LOAD, DATA
- 12 .data         00000164  20000000  080432a8  00045000  2**2
+ 12 .data         00000164  20000000  080432e8  00045000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
- 13 TouchGFX_ScratchbufferA 00000100  20000180  0804340c  00045180  2**5
+ 13 TouchGFX_ScratchbufferA 00000100  20000180  0804344c  00045180  2**5
                   CONTENTS, ALLOC, LOAD, DATA
- 14 TouchGFX_ScratchbufferB 00000100  20000280  0804350c  00045280  2**5
+ 14 TouchGFX_ScratchbufferB 00000100  20000280  0804354c  00045280  2**5
                   CONTENTS, ALLOC, LOAD, DATA
- 15 .bss          00014040  20000380  0804360c  00045380  2**2
+ 15 .bss          00014040  20000380  0804364c  00045380  2**2
                   ALLOC
- 16 ._user_heap_stack 00001400  200143c0  0804360c  000453c0  2**0
+ 16 ._user_heap_stack 00001400  200143c0  0804364c  000453c0  2**0
                   ALLOC
  17 .ARM.attributes 00000030  00000000  00000000  00045380  2**0
                   CONTENTS, READONLY
@@ -579,7 +579,7 @@ LoopFillZerobss:
   ldr   sp, =_estack       /* set stack pointer */
  8000694:	20030000 	.word	0x20030000
   ldr  r3, =_sidata
- 8000698:	080432a8 	.word	0x080432a8
+ 8000698:	080432e8 	.word	0x080432e8
   ldr  r0, =_sdata
  800069c:	20000000 	.word	0x20000000
   ldr  r3, =_edata
@@ -11269,10 +11269,10 @@ touchgfx::GeneratedFont& getFont_segoeuib_20_4bpp()
  800464e:	bd30      	pop	{r4, r5, pc}
  8004650:	20002818 	.word	0x20002818
  8004654:	08026a6c 	.word	0x08026a6c
- 8004658:	08028960 	.word	0x08028960
+ 8004658:	08028990 	.word	0x08028990
  800465c:	2000281c 	.word	0x2000281c
- 8004660:	08028bf8 	.word	0x08028bf8
- 8004664:	08028c08 	.word	0x08028c08
+ 8004660:	08028c34 	.word	0x08028c34
+ 8004664:	08028c44 	.word	0x08028c44
  8004668:	080045f1 	.word	0x080045f1
 
 0800466c <__tcf_0>:
@@ -11281,20 +11281,20 @@ touchgfx::GeneratedFont& getFont_verdanab_14_4bpp();
 
 touchgfx::GeneratedFont& getFont_verdanab_14_4bpp()
 {
-    static touchgfx::GeneratedFont verdanab_14_4bpp(glyphs_verdanab_14_4bpp, 27, 14, 14, 0, 0, 4, 1, 0, 1, unicodes_verdanab_14_4bpp, kerning_verdanab_14_4bpp, 63, 0, 0, 0);
+    static touchgfx::GeneratedFont verdanab_14_4bpp(glyphs_verdanab_14_4bpp, 28, 14, 14, 0, 0, 4, 1, 0, 1, unicodes_verdanab_14_4bpp, kerning_verdanab_14_4bpp, 63, 0, 0, 0);
  800466c:	4770      	bx	lr
 	...
 
 08004670 <_Z24getFont_verdanab_14_4bppv>:
 {
  8004670:	b530      	push	{r4, r5, lr}
-    static touchgfx::GeneratedFont verdanab_14_4bpp(glyphs_verdanab_14_4bpp, 27, 14, 14, 0, 0, 4, 1, 0, 1, unicodes_verdanab_14_4bpp, kerning_verdanab_14_4bpp, 63, 0, 0, 0);
+    static touchgfx::GeneratedFont verdanab_14_4bpp(glyphs_verdanab_14_4bpp, 28, 14, 14, 0, 0, 4, 1, 0, 1, unicodes_verdanab_14_4bpp, kerning_verdanab_14_4bpp, 63, 0, 0, 0);
  8004672:	4d16      	ldr	r5, [pc, #88]	@ (80046cc <_Z24getFont_verdanab_14_4bppv+0x5c>)
  8004674:	682c      	ldr	r4, [r5, #0]
  8004676:	f014 0401 	ands.w	r4, r4, #1
 {
  800467a:	b08f      	sub	sp, #60	@ 0x3c
-    static touchgfx::GeneratedFont verdanab_14_4bpp(glyphs_verdanab_14_4bpp, 27, 14, 14, 0, 0, 4, 1, 0, 1, unicodes_verdanab_14_4bpp, kerning_verdanab_14_4bpp, 63, 0, 0, 0);
+    static touchgfx::GeneratedFont verdanab_14_4bpp(glyphs_verdanab_14_4bpp, 28, 14, 14, 0, 0, 4, 1, 0, 1, unicodes_verdanab_14_4bpp, kerning_verdanab_14_4bpp, 63, 0, 0, 0);
  800467c:	f3bf 8f5b 	dmb	ish
  8004680:	d121      	bne.n	80046c6 <_Z24getFont_verdanab_14_4bppv+0x56>
  8004682:	4628      	mov	r0, r5
@@ -11314,7 +11314,7 @@ touchgfx::GeneratedFont& getFont_verdanab_14_4bpp()
  80046a4:	230e      	movs	r3, #14
  80046a6:	490c      	ldr	r1, [pc, #48]	@ (80046d8 <_Z24getFont_verdanab_14_4bppv+0x68>)
  80046a8:	9300      	str	r3, [sp, #0]
- 80046aa:	221b      	movs	r2, #27
+ 80046aa:	221c      	movs	r2, #28
  80046ac:	e9cd 440b 	strd	r4, r4, [sp, #44]	@ 0x2c
  80046b0:	480a      	ldr	r0, [pc, #40]	@ (80046dc <_Z24getFont_verdanab_14_4bppv+0x6c>)
  80046b2:	940a      	str	r4, [sp, #40]	@ 0x28
@@ -11330,9 +11330,9 @@ touchgfx::GeneratedFont& getFont_verdanab_14_4bpp()
  80046c8:	b00f      	add	sp, #60	@ 0x3c
  80046ca:	bd30      	pop	{r4, r5, pc}
  80046cc:	20002848 	.word	0x20002848
- 80046d0:	08028bfc 	.word	0x08028bfc
- 80046d4:	08028c0c 	.word	0x08028c0c
- 80046d8:	08028970 	.word	0x08028970
+ 80046d0:	08028c38 	.word	0x08028c38
+ 80046d4:	08028c48 	.word	0x08028c48
+ 80046d8:	080289a0 	.word	0x080289a0
  80046dc:	2000284c 	.word	0x2000284c
  80046e0:	0800466d 	.word	0x0800466d
 
@@ -11390,9 +11390,9 @@ touchgfx::GeneratedFont& getFont_verdanab_20_4bpp()
  8004740:	b00f      	add	sp, #60	@ 0x3c
  8004742:	bd30      	pop	{r4, r5, pc}
  8004744:	20002878 	.word	0x20002878
- 8004748:	08028c00 	.word	0x08028c00
- 800474c:	08028c10 	.word	0x08028c10
- 8004750:	08028aec 	.word	0x08028aec
+ 8004748:	08028c3c 	.word	0x08028c3c
+ 800474c:	08028c4c 	.word	0x08028c4c
+ 8004750:	08028b28 	.word	0x08028b28
  8004754:	2000287c 	.word	0x2000287c
  8004758:	080046e5 	.word	0x080046e5
 
@@ -11452,9 +11452,9 @@ touchgfx::GeneratedFont& getFont_verdanab_30_4bpp()
  80047bc:	bd30      	pop	{r4, r5, pc}
  80047be:	bf00      	nop
  80047c0:	200028a8 	.word	0x200028a8
- 80047c4:	08028c04 	.word	0x08028c04
- 80047c8:	08028c14 	.word	0x08028c14
- 80047cc:	08028b78 	.word	0x08028b78
+ 80047c4:	08028c40 	.word	0x08028c40
+ 80047c8:	08028c50 	.word	0x08028c50
+ 80047cc:	08028bb4 	.word	0x08028bb4
  80047d0:	200028ac 	.word	0x200028ac
  80047d4:	0800475d 	.word	0x0800475d
 
@@ -11728,9 +11728,9 @@ void touchgfx::Texts::setLanguage(touchgfx::LanguageId id)
  8004924:	200136d8 	.word	0x200136d8
  8004928:	200136e0 	.word	0x200136e0
  800492c:	200136dc 	.word	0x200136dc
- 8004930:	08028cc8 	.word	0x08028cc8
- 8004934:	08028c18 	.word	0x08028c18
- 8004938:	08028d88 	.word	0x08028d88
+ 8004930:	08028d04 	.word	0x08028d04
+ 8004934:	08028c54 	.word	0x08028c54
+ 8004938:	08028dc8 	.word	0x08028dc8
 
 0800493c <_ZNK8touchgfx5Texts7getTextEt>:
     languagesArray[id] = (const TranslationHeader*)translation;
@@ -66377,10 +66377,10 @@ Timer_t * const pxTimer = ( Timer_t * ) listGET_OWNER_OF_HEAD_ENTRY( pxCurrentTi
  8024a22:	4798      	blx	r3
  8024a24:	3601      	adds	r6, #1
  8024a26:	e7f2      	b.n	8024a0e <__libc_init_array+0x1e>
- 8024a28:	0804328c 	.word	0x0804328c
- 8024a2c:	0804328c 	.word	0x0804328c
- 8024a30:	0804328c 	.word	0x0804328c
- 8024a34:	080432a0 	.word	0x080432a0
+ 8024a28:	080432cc 	.word	0x080432cc
+ 8024a2c:	080432cc 	.word	0x080432cc
+ 8024a30:	080432cc 	.word	0x080432cc
+ 8024a34:	080432e0 	.word	0x080432e0
 
 08024a38 <__retarget_lock_init_recursive>:
  8024a38:	4770      	bx	lr

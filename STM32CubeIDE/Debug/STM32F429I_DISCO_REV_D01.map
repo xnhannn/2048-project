@@ -16028,143 +16028,140 @@ LOAD C:/Environment/STMicroelectronics/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/
                 0x08027c90                        . = ALIGN (0x4)
 
 FontFlashSection
-                0x08027c54      0xfa2
+                0x08027c54      0xfde
  FontFlashSection
                 0x08027c54       0x46 ./Application/User/generated/Font_segoeuib_20_4bpp_0.o
                 0x08027c54                unicodes_segoeuib_20_4bpp_0
  *fill*         0x08027c9a        0x2 
  FontFlashSection
-                0x08027c9c      0x476 ./Application/User/generated/Font_verdanab_14_4bpp_0.o
+                0x08027c9c      0x4a8 ./Application/User/generated/Font_verdanab_14_4bpp_0.o
                 0x08027c9c                unicodes_verdanab_14_4bpp_0
- *fill*         0x08028112        0x2 
  FontFlashSection
-                0x08028114      0x2ae ./Application/User/generated/Font_verdanab_20_4bpp_0.o
-                0x08028114                unicodes_verdanab_20_4bpp_0
- *fill*         0x080283c2        0x2 
+                0x08028144      0x2ae ./Application/User/generated/Font_verdanab_20_4bpp_0.o
+                0x08028144                unicodes_verdanab_20_4bpp_0
+ *fill*         0x080283f2        0x2 
  FontFlashSection
-                0x080283c4      0x59c ./Application/User/generated/Font_verdanab_30_4bpp_0.o
-                0x080283c4                unicodes_verdanab_30_4bpp_0
+                0x080283f4      0x59c ./Application/User/generated/Font_verdanab_30_4bpp_0.o
+                0x080283f4                unicodes_verdanab_30_4bpp_0
  FontFlashSection
-                0x08028960        0xe ./Application/User/generated/Table_segoeuib_20_4bpp.o
-                0x08028960                glyphs_segoeuib_20_4bpp
- *fill*         0x0802896e        0x2 
+                0x08028990        0xe ./Application/User/generated/Table_segoeuib_20_4bpp.o
+                0x08028990                glyphs_segoeuib_20_4bpp
+ *fill*         0x0802899e        0x2 
  FontFlashSection
-                0x08028970      0x17a ./Application/User/generated/Table_verdanab_14_4bpp.o
-                0x08028970                glyphs_verdanab_14_4bpp
- *fill*         0x08028aea        0x2 
+                0x080289a0      0x188 ./Application/User/generated/Table_verdanab_14_4bpp.o
+                0x080289a0                glyphs_verdanab_14_4bpp
  FontFlashSection
-                0x08028aec       0x8c ./Application/User/generated/Table_verdanab_20_4bpp.o
-                0x08028aec                glyphs_verdanab_20_4bpp
+                0x08028b28       0x8c ./Application/User/generated/Table_verdanab_20_4bpp.o
+                0x08028b28                glyphs_verdanab_20_4bpp
  FontFlashSection
-                0x08028b78       0x7e ./Application/User/generated/Table_verdanab_30_4bpp.o
-                0x08028b78                glyphs_verdanab_30_4bpp
+                0x08028bb4       0x7e ./Application/User/generated/Table_verdanab_30_4bpp.o
+                0x08028bb4                glyphs_verdanab_30_4bpp
 
 FontSearchFlashSection
-                0x08028bf8       0x20
+                0x08028c34       0x20
  FontSearchFlashSection
-                0x08028bf8        0x4 ./Application/User/generated/Kerning_segoeuib_20_4bpp.o
-                0x08028bf8                kerning_segoeuib_20_4bpp
+                0x08028c34        0x4 ./Application/User/generated/Kerning_segoeuib_20_4bpp.o
+                0x08028c34                kerning_segoeuib_20_4bpp
  FontSearchFlashSection
-                0x08028bfc        0x4 ./Application/User/generated/Kerning_verdanab_14_4bpp.o
-                0x08028bfc                kerning_verdanab_14_4bpp
+                0x08028c38        0x4 ./Application/User/generated/Kerning_verdanab_14_4bpp.o
+                0x08028c38                kerning_verdanab_14_4bpp
  FontSearchFlashSection
-                0x08028c00        0x4 ./Application/User/generated/Kerning_verdanab_20_4bpp.o
-                0x08028c00                kerning_verdanab_20_4bpp
+                0x08028c3c        0x4 ./Application/User/generated/Kerning_verdanab_20_4bpp.o
+                0x08028c3c                kerning_verdanab_20_4bpp
  FontSearchFlashSection
-                0x08028c04        0x4 ./Application/User/generated/Kerning_verdanab_30_4bpp.o
-                0x08028c04                kerning_verdanab_30_4bpp
+                0x08028c40        0x4 ./Application/User/generated/Kerning_verdanab_30_4bpp.o
+                0x08028c40                kerning_verdanab_30_4bpp
  FontSearchFlashSection
-                0x08028c08        0x4 ./Application/User/generated/Table_segoeuib_20_4bpp.o
-                0x08028c08                unicodes_segoeuib_20_4bpp
+                0x08028c44        0x4 ./Application/User/generated/Table_segoeuib_20_4bpp.o
+                0x08028c44                unicodes_segoeuib_20_4bpp
  FontSearchFlashSection
-                0x08028c0c        0x4 ./Application/User/generated/Table_verdanab_14_4bpp.o
-                0x08028c0c                unicodes_verdanab_14_4bpp
+                0x08028c48        0x4 ./Application/User/generated/Table_verdanab_14_4bpp.o
+                0x08028c48                unicodes_verdanab_14_4bpp
  FontSearchFlashSection
-                0x08028c10        0x4 ./Application/User/generated/Table_verdanab_20_4bpp.o
-                0x08028c10                unicodes_verdanab_20_4bpp
+                0x08028c4c        0x4 ./Application/User/generated/Table_verdanab_20_4bpp.o
+                0x08028c4c                unicodes_verdanab_20_4bpp
  FontSearchFlashSection
-                0x08028c14        0x4 ./Application/User/generated/Table_verdanab_30_4bpp.o
-                0x08028c14                unicodes_verdanab_30_4bpp
+                0x08028c50        0x4 ./Application/User/generated/Table_verdanab_30_4bpp.o
+                0x08028c50                unicodes_verdanab_30_4bpp
 
 TextFlashSection
-                0x08028c18      0x1cc
+                0x08028c54      0x1d0
  TextFlashSection
-                0x08028c18       0xb0 ./Application/User/generated/LanguageGb.o
-                0x08028c18                indicesGb
+                0x08028c54       0xb0 ./Application/User/generated/LanguageGb.o
+                0x08028c54                indicesGb
  TextFlashSection
-                0x08028cc8       0xbe ./Application/User/generated/Texts.o
-                0x08028cc8                texts_all_languages
- *fill*         0x08028d86        0x2 
+                0x08028d04       0xc4 ./Application/User/generated/Texts.o
+                0x08028d04                texts_all_languages
  TextFlashSection
-                0x08028d88       0x5c ./Application/User/generated/TypedTextDatabase.o
-                0x08028d88                typedTextDatabaseArray
-                0x08028d8c                typedText_database_DEFAULT
+                0x08028dc8       0x5c ./Application/User/generated/TypedTextDatabase.o
+                0x08028dc8                typedTextDatabaseArray
+                0x08028dcc                typedText_database_DEFAULT
 
 ExtFlashSection
-                0x08028de4    0x1a4a0
+                0x08028e24    0x1a4a0
  ExtFlashSection
-                0x08028de4     0x14a0 ./Application/User/generated/image_Screenshot_2025-05-27_104616.o
-                0x08028de4                image_screenshot_2025_05_27_104616
+                0x08028e24     0x14a0 ./Application/User/generated/image_Screenshot_2025-05-27_104616.o
+                0x08028e24                image_screenshot_2025_05_27_104616
  ExtFlashSection
-                0x0802a284    0x12c00 ./Application/User/generated/image_logo-1-240x160.o
-                0x0802a284                image_logo_1_240x160
+                0x0802a2c4    0x12c00 ./Application/User/generated/image_logo-1-240x160.o
+                0x0802a2c4                image_logo_1_240x160
  ExtFlashSection
-                0x0803ce84     0x3200 ./Application/User/generated/image_logo-2-80x80-2.o
-                0x0803ce84                image_logo_2_80x80_2
+                0x0803cec4     0x3200 ./Application/User/generated/image_logo-2-80x80-2.o
+                0x0803cec4                image_logo_2_80x80_2
  ExtFlashSection
-                0x08040084     0x3200 ./Application/User/generated/image_logo-2-80x80.o
-                0x08040084                image_logo_2_80x80
+                0x080400c4     0x3200 ./Application/User/generated/image_logo-2-80x80.o
+                0x080400c4                image_logo_2_80x80
 
-.ARM.extab      0x08043284        0x0
-                0x08043284                        . = ALIGN (0x4)
+.ARM.extab      0x080432c4        0x0
+                0x080432c4                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08043284                        . = ALIGN (0x4)
+                0x080432c4                        . = ALIGN (0x4)
 
-.ARM            0x08043284        0x8
-                0x08043284                        . = ALIGN (0x4)
-                0x08043284                        __exidx_start = .
+.ARM            0x080432c4        0x8
+                0x080432c4                        . = ALIGN (0x4)
+                0x080432c4                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x08043284        0x8 C:/Environment/STMicroelectronics/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memchr.o)
- .ARM.exidx     0x0804328c        0x0 C:/Environment/STMicroelectronics/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x080432c4        0x8 C:/Environment/STMicroelectronics/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memchr.o)
+ .ARM.exidx     0x080432cc        0x0 C:/Environment/STMicroelectronics/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
                                   0x8 (size before relaxing)
-                0x0804328c                        __exidx_end = .
-                0x0804328c                        . = ALIGN (0x4)
+                0x080432cc                        __exidx_end = .
+                0x080432cc                        . = ALIGN (0x4)
 
-.rel.dyn        0x0804328c        0x0
- .rel.iplt      0x0804328c        0x0 C:/Environment/STMicroelectronics/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x080432cc        0x0
+ .rel.iplt      0x080432cc        0x0 C:/Environment/STMicroelectronics/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.preinit_array  0x0804328c        0x0
-                0x0804328c                        . = ALIGN (0x4)
-                0x0804328c                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x080432cc        0x0
+                0x080432cc                        . = ALIGN (0x4)
+                0x080432cc                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0804328c                        PROVIDE (__preinit_array_end = .)
-                0x0804328c                        . = ALIGN (0x4)
+                0x080432cc                        PROVIDE (__preinit_array_end = .)
+                0x080432cc                        . = ALIGN (0x4)
 
-.init_array     0x0804328c       0x14
-                0x0804328c                        . = ALIGN (0x4)
-                0x0804328c                        PROVIDE (__init_array_start = .)
+.init_array     0x080432cc       0x14
+                0x080432cc                        . = ALIGN (0x4)
+                0x080432cc                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0804328c        0x4 C:/Environment/STMicroelectronics/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
- .init_array    0x08043290        0x4 ./Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o
- .init_array    0x08043294        0x4 ./Application/User/generated/TypedTextDatabase.o
- .init_array    0x08043298        0x4 ../../Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc\libtouchgfx-float-abi-hard.a(LCD.o)
- .init_array    0x0804329c        0x4 ../../Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc\libtouchgfx-float-abi-hard.a(Application.o)
-                0x080432a0                        PROVIDE (__init_array_end = .)
-                0x080432a0                        . = ALIGN (0x4)
+ .init_array    0x080432cc        0x4 C:/Environment/STMicroelectronics/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .init_array    0x080432d0        0x4 ./Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o
+ .init_array    0x080432d4        0x4 ./Application/User/generated/TypedTextDatabase.o
+ .init_array    0x080432d8        0x4 ../../Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc\libtouchgfx-float-abi-hard.a(LCD.o)
+ .init_array    0x080432dc        0x4 ../../Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc\libtouchgfx-float-abi-hard.a(Application.o)
+                0x080432e0                        PROVIDE (__init_array_end = .)
+                0x080432e0                        . = ALIGN (0x4)
 
-.fini_array     0x080432a0        0x8
-                0x080432a0                        . = ALIGN (0x4)
+.fini_array     0x080432e0        0x8
+                0x080432e0                        . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x080432a0        0x4 C:/Environment/STMicroelectronics/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
- .fini_array    0x080432a4        0x4 ./Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o
+ .fini_array    0x080432e0        0x4 C:/Environment/STMicroelectronics/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x080432e4        0x4 ./Application/User/TouchGFX/target/generated/TouchGFXConfiguration.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x080432a8                        . = ALIGN (0x4)
-                0x080432a8                        _sidata = LOADADDR (.data)
+                0x080432e8                        . = ALIGN (0x4)
+                0x080432e8                        _sidata = LOADADDR (.data)
 
-.data           0x20000000      0x164 load address 0x080432a8
+.data           0x20000000      0x164 load address 0x080432e8
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -16279,21 +16276,21 @@ ExtFlashSection
                 0x20000164                        . = ALIGN (0x4)
                 0x20000164                        _edata = .
 
-.igot.plt       0x20000164        0x0 load address 0x0804340c
+.igot.plt       0x20000164        0x0 load address 0x0804344c
  .igot.plt      0x20000164        0x0 C:/Environment/STMicroelectronics/STM32CubeIDE_1.18.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
 TouchGFX_ScratchbufferA
-                0x20000180      0x100 load address 0x0804340c
+                0x20000180      0x100 load address 0x0804344c
  TouchGFX_ScratchbufferA
                 0x20000180      0x100 ../../Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc\libtouchgfx-float-abi-hard.a(LCD16bpp.o)
 
 TouchGFX_ScratchbufferB
-                0x20000280      0x100 load address 0x0804350c
+                0x20000280      0x100 load address 0x0804354c
  TouchGFX_ScratchbufferB
                 0x20000280      0x100 ../../Middlewares/ST/touchgfx/lib/core/cortex_m4f/gcc\libtouchgfx-float-abi-hard.a(LCD16bpp.o)
                 0x20000380                        . = ALIGN (0x4)
 
-.bss            0x20000380    0x14040 load address 0x0804360c
+.bss            0x20000380    0x14040 load address 0x0804364c
                 0x20000380                        _sbss = .
                 0x20000380                        __bss_start__ = _sbss
  *(.bss)
@@ -16717,7 +16714,7 @@ TouchGFX_ScratchbufferB
                 0x200143c0                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x200143c0     0x1400 load address 0x0804360c
+                0x200143c0     0x1400 load address 0x0804364c
                 0x200143c0                        . = ALIGN (0x8)
                 0x200143c0                        PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
