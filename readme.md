@@ -39,4 +39,4 @@ Mục tiêu:
 ---
 
 ## 🎥 Demo (Video)
-Link video demo: https://husteduvn-my.sharepoint.com/:v:/g/personal/nhan_nx225217_sis_hust_edu_vn/EepBZ9h6-sxMjAb6A7pVtEABQZY9YMS2x5h5g8PDG1GPJg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=VSdRXy
+Link video demo: https://husteduvn-my.sharepoint.com/:v:/g/personal/nhan_nx225217_sis_hust_edu_vn/EepBZ9h6-sxMjAb6A7pVtEAB1SlNFQJWcu3F9PjWBGYd1w?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=gocrJX
